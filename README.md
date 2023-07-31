@@ -1,6 +1,6 @@
 # Compact DnDBeyond-like 5e Character Sheet
 
-![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Feastcw%2Ffoundryvtt-compactBeyond5eSheet%2Freleases%2Flatest&query=assets.1.download_count&label=Downloads%40latest)
+![Latest Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Feastcw%2Ffoundryvtt-compactBeyond5eSheet%2Freleases%2Flatest&query=assets.1.download_count&label=Downloads%40latest)
 [![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Fcompact-beyond-5e-sheet&colorB=4aa94a)](https://forge-vtt.com/bazaar#package=compact-beyond-5e-sheet)
 [![Foundry Hub Endorsements](https://img.shields.io/endpoint?logoColor=white&url=https%3A%2F%2Fwww.foundryvtt-hub.com%2Fwp-json%2Fhubapi%2Fv1%2Fpackage%2Fcompact-beyond-5e-sheet%2Fshield%2Fendorsements)](https://www.foundryvtt-hub.com/package/compact-beyond-5e-sheet/)
 [![Foundry Hub Comments](https://img.shields.io/endpoint?logoColor=white&url=https%3A%2F%2Fwww.foundryvtt-hub.com%2Fwp-json%2Fhubapi%2Fv1%2Fpackage%2Fcompact-beyond-5e-sheet%2Fshield%2Fcomments)](https://www.foundryvtt-hub.com/package/compact-beyond-5e-sheet/)
@@ -9,19 +9,21 @@
 ![Foundry Recommended Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Feastcw%2Ffoundryvtt-compactBeyond5eSheet%2Fmaster%2Fsrc%2Fmodule.json&query=%24.compatibility.verified&label=Recommended%20Foundry%20Version&color=green)
 ![Manifest+ Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Feastcw%2Ffoundryvtt-compactBeyond5eSheet%2Fmaster%2Fsrc%2Fmodule.json&query=%24.manifestPlusVersion&label=Manifest%2B%20Version&color=blue)
 
-Shamlessly taking ideas (and some code) from both the [DnDBeyond character sheet](https://github.com/jopeek/fvtt-dndbeyond-character-sheet) and the [Tidy 5e character sheet](https://github.com/sdenec/tidy5e-sheet). This is an information-dense character sheet for Foundry users who like the feel of D&DBeyond's character sheet, but want it to fit better within the Foundry UI.
+[![Static Badge](https://img.shields.io/badge/-Buy%20me%20a%20drink-purple)](https://ko-fi.com/eastcw)
+
+Shamelessly taking ideas (and some code) from both the [DnDBeyond character sheet](https://github.com/jopeek/fvtt-dndbeyond-character-sheet) and the [Tidy 5e character sheet](https://github.com/sdenec/tidy5e-sheet). This is an information-dense character sheet for Foundry users who like the feel of D&DBeyond's character sheet, but want it to fit better within the Foundry UI.
 
 ## Installation
 
 Module JSON:
 
 ```
-https://github.com/ElfFriend-DnD/foundryvtt-compactBeyond5eSheet/releases/latest/download/module.json
+https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/releases/latest/download/module.json
 ```
 
 ### Dependencies
 
-This module depends on `Character Actions List dnd5e`, which you can obtain on the listing or [here](https://github.com/ElfFriend-DnD/foundryvtt-dnd5eCharacterActions).
+This module depends on `Character Actions List dnd5e`, which you can obtain on the listing or [here](https://github.com/eastcw/foundryvtt-dnd5eCharacterActions).
 
 ## Gallery
 
