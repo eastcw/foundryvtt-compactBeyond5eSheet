@@ -6,20 +6,19 @@
     {
       "name": "Cameron East",
       "discord": "cronosaurusrex",
-      "url": "https://github.com/eastcw"
+      "url": "https://github.com/eastcw",
+      "ko-fi": "https://ko-fi.com/eastcw"
     },
     {
       "name": "Andrew Krigline (akrigline)",
       "discord": "Calego#0914",
-      "url": "https://github.com/ElfFriend-DnD",
-      "ko-fi": "https://ko-fi.com/elffriend",
-      "patreon": "https://www.patreon.com/ElfFriend_DnD"
+      "url": "https://github.com/ElfFriend-DnD"
     }
   ],
   "license": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/blob/master/LICENSE",
   "bugs": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/issues",
   "changelog": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/releases",
-  "download": "https://github.com/ElfFriend-DnD/foundryvtt-compactBeyond5eSheet/releases/download/v2.0.0/module.zip",
+  "download": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/releases/download/v2.0.0/module.zip",
   "manifest": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/releases/latest/download/module.json",
   "readme": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/blob/master/README.md",
   "url": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/",
@@ -64,29 +63,36 @@
   "media": [
     {
       "type": "cover",
-      "url": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-compactBeyond5eSheet/master/readme-img/cover-image.png"
+      "caption": "A cover picture showing several stacked screenshots of the character sheet",
+      "url": "https://raw.githubusercontent.com/eastcw/foundryvtt-compactBeyond5eSheet/master/readme-img/cover-image.png"
     },
     {
       "type": "screenshot",
-      "url": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-compactBeyond5eSheet/master/readme-img/main-view.png"
+      "caption": "A screenshot of the character sheet showing the actions tab",
+      "url": "https://raw.githubusercontent.com/eastcw/foundryvtt-compactBeyond5eSheet/master/readme-img/main-view.png"
     },
     {
       "type": "screenshot",
-      "url": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-compactBeyond5eSheet/master/readme-img/inventory.png"
+      "caption": "A screenshot of the character sheet showing the inventory tab",
+      "url": "https://raw.githubusercontent.com/eastcw/foundryvtt-compactBeyond5eSheet/master/readme-img/inventory.png"
     },
     {
       "type": "screenshot",
-      "url": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-compactBeyond5eSheet/master/readme-img/spellbook.png"
+      "caption": "A screenshot of the character sheet showing the spellbook tab",
+      "url": "https://raw.githubusercontent.com/eastcw/foundryvtt-compactBeyond5eSheet/master/readme-img/spellbook.png"
     },
     {
       "type": "screenshot",
-      "url": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-compactBeyond5eSheet/master/readme-img/features.png"
+      "caption": "A screenshot of the character sheet showing the features tab",
+      "url": "https://raw.githubusercontent.com/eastcw/foundryvtt-compactBeyond5eSheet/master/readme-img/features.png"
     },
     {
       "type": "screenshot",
-      "url": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-compactBeyond5eSheet/master/readme-img/biography.png"
+      "caption": "A screenshot of the character sheet showing the biography tab",
+      "url": "https://raw.githubusercontent.com/eastcw/foundryvtt-compactBeyond5eSheet/master/readme-img/biography.png"
     }
   ],
   "socket": false,
-  "library": false
+  "library": false,
+  "manifestPlusVersion": "1.2.0"
 }
