@@ -1,6 +1,6 @@
 # Compact DnDBeyond-like 5e Character Sheet
 
-![Latest Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Feastcw%2Ffoundryvtt-compactBeyond5eSheet%2Freleases%2Flatest&query=assets.1.download_count&label=Downloads%40latest)
+![Latest Downloads](https://img.shields.io/github/downloads/eastcw/foundryvtt-compactBeyond5eSheet/latest/module.zip?color=blue)
 [![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Fcompact-beyond-5e-sheet&colorB=4aa94a)](https://forge-vtt.com/bazaar#package=compact-beyond-5e-sheet)
 [![Foundry Hub Endorsements](https://img.shields.io/endpoint?logoColor=white&url=https%3A%2F%2Fwww.foundryvtt-hub.com%2Fwp-json%2Fhubapi%2Fv1%2Fpackage%2Fcompact-beyond-5e-sheet%2Fshield%2Fendorsements)](https://www.foundryvtt-hub.com/package/compact-beyond-5e-sheet/)
 [![Foundry Hub Comments](https://img.shields.io/endpoint?logoColor=white&url=https%3A%2F%2Fwww.foundryvtt-hub.com%2Fwp-json%2Fhubapi%2Fv1%2Fpackage%2Fcompact-beyond-5e-sheet%2Fshield%2Fcomments)](https://www.foundryvtt-hub.com/package/compact-beyond-5e-sheet/)
