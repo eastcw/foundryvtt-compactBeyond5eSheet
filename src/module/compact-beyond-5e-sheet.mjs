@@ -8,6 +8,10 @@ import { CompactBeyond5e } from './foundryvtt-compactBeyond5eSheet.mjs';
  */
 //eslint-disable-next-line no-undef
 export class CompactBeyond5eSheet extends dnd5e.applications.actor.ActorSheet5eCharacter {
+  constructor() {
+    super(...arguments);
+    this._debouncedSearchFilter = foundry.utils.debounce(this._handleSearchFilter, 200);
+  }
   get template() {
     if (
       !game.user?.isGM &&
@@ -46,6 +50,39 @@ export class CompactBeyond5eSheet extends dnd5e.applications.actor.ActorSheet5eC
     });
 
     return options;
+  }
+
+  _handleSearchFilter(event, query, rgx, html) {
+    let anyMatch = !query;
+    const itemRows = html.querySelectorAll('.item-list > .item');
+    //eslint-disable-next-line no-undef
+    // log(false, 'onSearchFilter firing', {
+    //   query,
+    //   rgx,
+    //   html,
+    //   itemRows,
+    // });
+    for (let li of itemRows) {
+      if (!query) {
+        li.classList.remove('hidden');
+        continue;
+      }
+      const title = li.querySelector('.item-name')?.textContent;
+      if (!title) {
+        continue;
+      }
+      const match = rgx.test(SearchFilter.cleanQuery(title));
+      li.classList.toggle('hidden', !match);
+      if (match) {
+        //eslint-disable-next-line no-unused-vars
+        anyMatch = true;
+      }
+    }
+  }
+
+  /** @override */
+  _onSearchFilter(...args) {
+    this._debouncedSearchFilter(...args);
   }
 
   /**
