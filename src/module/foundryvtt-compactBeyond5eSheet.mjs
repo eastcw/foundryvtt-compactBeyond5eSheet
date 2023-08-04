@@ -29,6 +29,7 @@ export class CompactBeyond5e {
   }
 
   static registerSettings() {
+    console.log('check 0');
     game.settings.register(this.MODULE_ID, this.SETTINGS.expandedLimited, {
       name: 'CB5ES.settings.expandedLimited.Label',
       default: false,
@@ -68,6 +69,75 @@ export class CompactBeyond5e {
     // });
   }
 
+  // Add Spell Slot Marker
+  // eslint-disable-next-line no-unused-vars
+  static spellSlotMarker(app, html, data) {
+    let actor = app.actor;
+    // let items = data.actor.items;
+    let options = ['pact', 'spell1', 'spell2', 'spell3', 'spell4', 'spell5', 'spell6', 'spell7', 'spell8', 'spell9'];
+    for (let o of options) {
+      let max = html.find(`.spell-max[data-level=${o}]`);
+      let name = max.closest('.spell-slots');
+      let spellData = actor.system.spells[o];
+      if (spellData.max === 0) {
+        continue;
+      }
+      let contents = ``;
+      for (let i = 1; i <= spellData.max; i++) {
+        if (i <= spellData.value) {
+          contents += `<span class="dot"></span>`;
+        } else {
+          contents += `<span class="dot empty"></span>`;
+        }
+      }
+      name.before(`<div class="spellSlotMarker">${contents}</div>`);
+    }
+
+    html.find('.spellSlotMarker .dot').mouseenter((ev) => {
+      const parentEl = ev.currentTarget.parentElement;
+      const index = [...parentEl.children].indexOf(ev.currentTarget);
+      const dots = parentEl.querySelectorAll('.dot');
+
+      if (ev.currentTarget.classList.contains('empty')) {
+        for (let i = 0; i < dots.length; i++) {
+          if (i <= index) {
+            dots[i].classList.contains('empty') ? dots[i].classList.add('change') : '';
+          }
+        }
+      } else {
+        for (let i = 0; i < dots.length; i++) {
+          if (i >= index) {
+            dots[i].classList.contains('empty') ? '' : dots[i].classList.add('change');
+          }
+        }
+      }
+    });
+
+    html.find('.spellSlotMarker .dot').mouseleave((ev) => {
+      const parentEl = ev.currentTarget.parentElement;
+      $(parentEl).find('.dot').removeClass('change');
+    });
+
+    html.find('.spellSlotMarker .dot').click(async (ev) => {
+      const index = [...ev.currentTarget.parentElement.children].indexOf(ev.currentTarget);
+      const slots = $(ev.currentTarget).parents('.spell-level-slots');
+      const spellLevel = slots.find('.spell-max').data('level');
+      // debug(`tidy5e-sheet | spellSlotMarker | spellLevel: ${spellLevel}, index: ${index}`);
+      if (spellLevel) {
+        let path = `data.spells.${spellLevel}.value`;
+        if (ev.currentTarget.classList.contains('empty')) {
+          await actor.update({
+            [path]: index + 1,
+          });
+        } else {
+          await actor.update({
+            [path]: index,
+          });
+        }
+      }
+    });
+  }
+
   static async preloadTemplates() {
     const templatePaths = [
       'assets/armor-class.hbs',
@@ -89,6 +159,7 @@ export class CompactBeyond5e {
    * Registers hooks and sheets
    */
   static init() {
+    console.log('checkinit');
     Handlebars.registerHelper('cb5es-isEmpty', foundry.utils.isEmpty);
 
     Actors.registerSheet('dnd5e', CompactBeyond5eSheet, {
@@ -109,6 +180,10 @@ export class CompactBeyond5e {
 
       // Preload Handlebars templates
       this.preloadTemplates();
+    });
+
+    Hooks.on('renderCompactBeyond5eSheet', (app, html, data) => {
+      this.spellSlotMarker(app, html, data);
     });
   }
 }
