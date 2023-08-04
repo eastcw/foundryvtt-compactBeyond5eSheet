@@ -5,12 +5,6 @@
   gap: calc($space);
   max-width: unset;
 
-  // display as a grid with 2 equal columns and 4 equal rows
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, minmax(auto, 1fr)) auto;
-  grid-auto-flow: column;
-
   h4 {
     font-size: 1em;
     font-weight: 700;
