@@ -1,5 +1,6 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
 
+  {{! prettier-ignore }}
   {{> (concat moduleFilePath "templates/parts/sheet-header.hbs")}}
 
   {{!-- Ability Scores --}}
@@ -56,7 +57,7 @@
 
 
   {{!-- Header Attributes --}}
-  <ul class="resources">
+  <ul class="attributes">
     {{#each resources as |res|}}
     <li class="attribute resource">
       <h4 class="attribute-name box-title">
@@ -122,49 +123,54 @@
 
       {{!-- Biography Tab --}}
       <div class="tab biography flexrow" data-group="primary" data-tab="biography">
-        <article>
-          <h4 class="section-titles biopage">{{ localize "DND5E.PersonalityTraits" }}</h4>
-          {{editor system.details.trait target="system.details.trait" button=true owner=owner engine="prosemirror"
-          collaborate=false
-          editable=editable}}
-        </article>
-        <article>
-          <h4 class="section-titles biopage">{{ localize "DND5E.Ideals" }}</h4>
-          {{editor system.details.ideal target="system.details.ideal" button=true owner=owner engine="prosemirror"
-          collaborate=false
-          editable=editable}}
-        </article>
-        <article>
-          <h4 class="section-titles biopage">{{ localize "DND5E.Bonds" }}</h4>
-          {{editor system.details.bond target="system.details.bond" button=true owner=owner engine="prosemirror"
-          collaborate=false
-          editable=editable}}
-        </article>
-        <article>
-          <h4 class="section-titles biopage">{{ localize "DND5E.Flaws" }}</h4>
-          {{editor system.details.flaw target="system.details.flaw" button=true owner=owner engine="prosemirror"
-          collaborate=false
-          editable=editable}}
-        </article>
-        <article>
-          <h4 class="section-titles biopage">{{ localize "DND5E.Alignment" }}</h4>
+        <div class="left-notes note-entries flexcol">
+          <article>
+            <h4 class="section-titles biopage">{{ localize "DND5E.PersonalityTraits" }}</h4>
+            {{editor system.details.trait target="system.details.trait" button=true owner=owner engine="prosemirror"
+            collaborate=false
+            editable=editable}}
+          </article>
+          <article>
+            <h4 class="section-titles biopage">{{ localize "DND5E.Ideals" }}</h4>
+            {{editor system.details.ideal target="system.details.ideal" button=true owner=owner engine="prosemirror"
+            collaborate=false
+            editable=editable}}
+          </article>
+          <article>
+            <h4 class="section-titles biopage">{{ localize "DND5E.Bonds" }}</h4>
+            {{editor system.details.bond target="system.details.bond" button=true owner=owner engine="prosemirror"
+            collaborate=false
+            editable=editable}}
+          </article>
+          <article>
+            <h4 class="section-titles biopage">{{ localize "DND5E.Flaws" }}</h4>
+            {{editor system.details.flaw target="system.details.flaw" button=true owner=owner engine="prosemirror"
+            collaborate=false
+            editable=editable}}
+          </article>
+          <article>
+            <h4 class="section-titles biopage">{{ localize "DND5E.Alignment" }}</h4>
 
-          <input type="text" name="system.details.alignment" value="{{system.details.alignment}}"
-            placeholder="{{ localize 'DND5E.Alignment' }}" />
-        </article>
-        <article>
-          <h4 class="section-titles biopage">{{ localize "DND5E.Appearance" }}</h4>
+            <input type="text" name="system.details.alignment" value="{{system.details.alignment}}"
+              placeholder="{{ localize 'DND5E.Alignment' }}" />
+          </article>
+        </div>
 
-          {{editor system.details.appearance target="system.details.appearance" button=true editable=editable
-          engine="prosemirror" collaborate=false}}
+        <div class="right-notes note-entries flexcol">
+          <article>
+            <h4 class="section-titles biopage">{{ localize "DND5E.Appearance" }}</h4>
 
-        </article>
-        <article class="biography-notes big-bio">
-          <h4 class="section-titles">{{ localize "DND5E.Background" }}/{{ localize "DND5E.Biography" }}</h4>
+            {{editor system.details.appearance target="system.details.appearance" button=true editable=editable
+            engine="prosemirror" collaborate=false}}
 
-          {{editor biographyHTML target="system.details.biography.value" button=true editable=editable
-          engine="prosemirror" collaborate=false}}
-        </article>
+          </article>
+          <article class="biography-notes big-bio">
+            <h4 class="section-titles">{{ localize "DND5E.Background" }}/{{ localize "DND5E.Biography" }}</h4>
+
+            {{editor biographyHTML target="system.details.biography.value" button=true editable=editable
+            engine="prosemirror" collaborate=false}}
+          </article>
+        </div>
 
       </div>
     </section>
