@@ -29,7 +29,6 @@ module.exports = {
       files: ['./*.js', './*.cjs', './*.mjs'],
       env: {
         node: true,
-        jquery: true,
       },
     },
   ],
