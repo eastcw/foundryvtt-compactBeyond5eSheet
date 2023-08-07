@@ -33,4 +33,32 @@
       background-color: var(--spellbook-always-active);
     }
   }
+  .spellSlotMarker {
+    display: flex;
+    flex: initial;
+    gap: 2px;
+    align-items: center;
+    .dot {
+      position: relative;
+      display: block;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      background-color: var(--highlight);
+      border: 1px solid var(--color-border-dark-5);
+      &:hover,
+      &.change {
+        background-color: var(--light-highlight);
+      }
+
+      &.empty {
+        background-color: transparent;
+
+        &:hover,
+        &.change {
+          background-color: var(--light-highlight);
+        }
+      }
+    }
+  }
 }
