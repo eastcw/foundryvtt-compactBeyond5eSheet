@@ -88,6 +88,11 @@
     },
     {
       "type": "screenshot",
+      "caption": "A screenshot of the character sheet showing the effects tab",
+      "url": "https://raw.githubusercontent.com/eastcw/foundryvtt-compactBeyond5eSheet/master/readme-img/effects.png"
+    },
+    {
+      "type": "screenshot",
       "caption": "A screenshot of the character sheet showing the biography tab",
       "url": "https://raw.githubusercontent.com/eastcw/foundryvtt-compactBeyond5eSheet/master/readme-img/biography.png"
     }

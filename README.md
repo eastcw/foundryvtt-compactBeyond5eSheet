@@ -31,6 +31,7 @@ This module depends on `Character Actions List dnd5e`, which you can obtain on t
 [<img src="readme-img/spellbook.png" width="30%"></img>](readme-img/spellbook.png)
 [<img src="readme-img/inventory.png" width="30%"></img>](readme-img/inventory.png)
 [<img src="readme-img/features.png" width="30%"></img>](readme-img/features.png)
+[<img src="readme-img/effects.png" width="30%"></img>](readme-img/effects.png)
 [<img src="readme-img/biography.png" width="30%"></img>](readme-img/biography.png)
 
 Click to view bigger.
