@@ -22,7 +22,7 @@
   "manifest": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/releases/latest/download/module.json",
   "readme": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/blob/master/README.md",
   "url": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "compatibility": {
     "minimum": "10",
     "verified": "11.307"
