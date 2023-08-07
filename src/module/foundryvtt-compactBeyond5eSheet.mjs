@@ -13,6 +13,7 @@ export class CompactBeyond5e {
     // displayPassiveInsight: 'display-passive-ins',
     // displayPassiveInvestigation: 'display-passive-inv',
     // displayPassiveStealth: 'display-passive-ste',
+    showSpellSlotBubbles: 'show-spell-slot-bubbles',
   };
 
   /**
@@ -29,7 +30,6 @@ export class CompactBeyond5e {
   }
 
   static registerSettings() {
-    console.log('check 0');
     game.settings.register(this.MODULE_ID, this.SETTINGS.expandedLimited, {
       name: 'CB5ES.settings.expandedLimited.Label',
       default: false,
@@ -37,6 +37,15 @@ export class CompactBeyond5e {
       scope: 'world',
       config: true,
       hint: 'CB5ES.settings.expandedLimited.Hint',
+    });
+
+    game.settings.register(this.MODULE_ID, this.SETTINGS.showSpellSlotBubbles, {
+      name: 'CB5ES.settings.showSpellSlotBubbles.Label',
+      default: true,
+      type: Boolean,
+      scope: 'world',
+      config: true,
+      hint: 'CB5ES.settings.showSpellSlotBubbles.Hint',
     });
 
     // game.settings.register(this.MODULE_ID, this.SETTINGS.displayPassivePerception, {
@@ -72,6 +81,10 @@ export class CompactBeyond5e {
   // Add Spell Slot Marker
   // eslint-disable-next-line no-unused-vars
   static spellSlotMarker(app, html, data) {
+    if (!game.settings.get(this.MODULE_ID, this.SETTINGS.showSpellSlotBubbles)) {
+      return;
+    }
+
     let actor = app.actor;
     // let items = data.actor.items;
     let options = ['pact', 'spell1', 'spell2', 'spell3', 'spell4', 'spell5', 'spell6', 'spell7', 'spell8', 'spell9'];
@@ -122,7 +135,6 @@ export class CompactBeyond5e {
       const index = [...ev.currentTarget.parentElement.children].indexOf(ev.currentTarget);
       const slots = $(ev.currentTarget).parents('.spell-level-slots');
       const spellLevel = slots.find('.spell-max').data('level');
-      // debug(`tidy5e-sheet | spellSlotMarker | spellLevel: ${spellLevel}, index: ${index}`);
       if (spellLevel) {
         let path = `data.spells.${spellLevel}.value`;
         if (ev.currentTarget.classList.contains('empty')) {
@@ -159,7 +171,6 @@ export class CompactBeyond5e {
    * Registers hooks and sheets
    */
   static init() {
-    console.log('checkinit');
     Handlebars.registerHelper('cb5es-isEmpty', foundry.utils.isEmpty);
 
     Actors.registerSheet('dnd5e', CompactBeyond5eSheet, {

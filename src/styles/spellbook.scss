@@ -43,21 +43,21 @@
       display: block;
       width: 15px;
       height: 15px;
-      // cursor: pointer;
+      cursor: pointer;
       background-color: var(--highlight);
       border: 1px solid var(--color-border-dark-5);
-      // &:hover,
-      // &.change {
-      //   background-color: var(--t5e-warning-accent);
-      // }
+      &:hover,
+      &.change {
+        background-color: var(--light-highlight);
+      }
 
       &.empty {
         background-color: transparent;
 
-        // &:hover,
-        // &.change {
-        //   background-color: var(--t5e-prepared);
-        // }
+        &:hover,
+        &.change {
+          background-color: var(--light-highlight);
+        }
       }
     }
   }
