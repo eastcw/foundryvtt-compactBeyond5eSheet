@@ -55,7 +55,7 @@ Got rid of the spell school to make room for the more compressed table area. I c
 | **Name**                          | Description                                                                                 |
 | --------------------------------- | ------------------------------------------------------------------------------------------- |
 | **Use Expanded Sheet as Limited** | Uses the expanded sheet for the limited view.                                               |
-| **Show Passive {Skill}**          | Displays a dedicated fancy box below the skills list with the skill's passive score within. |
+| **Display spell slot bubbles**    | Displays a set of checkboxes to show you how many levelled spell slots are left at each level, a la DnDBeyond. |
 
 This sheet respects the 5e System setting: "Disable Experience Tracking"
 
