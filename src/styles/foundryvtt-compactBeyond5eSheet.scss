@@ -91,6 +91,11 @@
     }
   }
 
+  .items-header.flexrow,
+  .item.flexrow {
+    margin-right: 1em;
+  }
+
   /* these lists work better as wrapping flex lists so that gap can take effect */
   .item-properties,
   .traits-list {
