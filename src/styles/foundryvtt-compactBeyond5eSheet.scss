@@ -91,11 +91,6 @@
     }
   }
 
-  .items-header.flexrow,
-  .item.flexrow {
-    margin-right: 1em;
-  }
-
   /* these lists work better as wrapping flex lists so that gap can take effect */
   .item-properties,
   .traits-list {
@@ -129,10 +124,19 @@
   /* complicated flex layout to allow tab areas to be scrollable */
   /* instrumental: https://stackoverflow.com/questions/52487743/prevent-flex-item-from-exceeding-parent-height-and-make-scroll-bar-work */
 
-  .sheet-sidebar {
+  .sheet-sidebar,
+  .items-header.flexrow,
+  .item.flexrow {
     overflow: auto;
     scrollbar-width: thin;
     padding-right: $scrollbar-width;
+  }
+
+  @-moz-document url-prefix() {
+    .items-header.flexrow,
+    .item.flexrow {
+      padding-right: 0.75em;
+    }
   }
 
   .sheet-tab-area {
