@@ -21,6 +21,10 @@
         "Label": "Use Expanded Sheet as Limited",
         "Hint": "Show the full character sheet for users who have the Limited permission for a given Actor."
       },
+      "showFullCurrencyNames": {
+        "Label": "Show full currency names",
+        "Hint": "Show the full currency names (Gold, Silver, Platinum) instead of the abbreviated names (GP, SP, PP)"
+      },
       "showSpellSlotBubbles": {
         "Label": "Display spell slot bubbles",
         "Hint": "Shows remaining spell slots as full or empty squares, a la DnDBeyond. You will need to close and reopen the character sheet for this setting to take effect"

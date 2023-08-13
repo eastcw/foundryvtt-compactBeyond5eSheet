@@ -3,7 +3,11 @@
   {{#unless isNPC}}
   <div class="encumberance">
     {{#with system.attributes.encumbrance}}
-    <h3><strong>{{localize "CB5ES.WeightCarried"}}:</strong> {{ value }} {{ @root.weightUnit }}</h3>
+    <h3><strong>{{localize "CB5ES.WeightCarried"}}:</strong>
+      <span class="no-wrap">
+        {{ value }} {{ @root.weightUnit }}
+      </span>
+    </h3>
     <span class="{{#if (gt value max)}}encumbered{{/if}}">
       {{localize "DND5E.Max"}}: {{ max }} {{ @root.weightUnit }}
     </span>
@@ -21,7 +25,7 @@
     <div class="currency-inputs">
       {{#each system.currency as |v k|}}
       <label class="denomination {{k}}">
-        {{#if @root/systemFeatures.currencyLabels}}{{ lookup @root/labels.currencies k }}{{else}}{{k}}{{/if}}
+        <span class="currency-abbreviation {{k}}"></span>
         <div class="dynamic-input">
           <input type="text" name="system.currency.{{k}}" value="{{v}}" data-dtype="Number" />
           <span class="hidden">{{ v }}</span>
