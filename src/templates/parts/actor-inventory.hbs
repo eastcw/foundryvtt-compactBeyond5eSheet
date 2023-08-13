@@ -3,7 +3,11 @@
   {{#unless isNPC}}
   <div class="encumberance">
     {{#with system.attributes.encumbrance}}
-    <h3><strong>{{localize "CB5ES.WeightCarried"}}:</strong> {{ value }} {{ @root.weightUnit }}</h3>
+    <h3><strong>{{localize "CB5ES.WeightCarried"}}:</strong>
+      <span class="no-wrap">
+        {{ value }} {{ @root.weightUnit }}
+      </span>
+    </h3>
     <span class="{{#if (gt value max)}}encumbered{{/if}}">
       {{localize "DND5E.Max"}}: {{ max }} {{ @root.weightUnit }}
     </span>

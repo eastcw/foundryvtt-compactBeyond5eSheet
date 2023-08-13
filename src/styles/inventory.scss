@@ -17,6 +17,10 @@
   }
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 .currency {
   display: flex;
   flex-direction: column;
