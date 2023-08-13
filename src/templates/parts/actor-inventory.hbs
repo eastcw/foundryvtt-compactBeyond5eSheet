@@ -21,7 +21,7 @@
     <div class="currency-inputs">
       {{#each system.currency as |v k|}}
       <label class="denomination {{k}}">
-        {{#if @root/systemFeatures.currencyLabels}}{{ lookup @root/labels.currencies k }}{{else}}{{k}}{{/if}}
+        <span class="currency-abbreviation {{k}}"></span>
         <div class="dynamic-input">
           <input type="text" name="system.currency.{{k}}" value="{{v}}" data-dtype="Number" />
           <span class="hidden">{{ v }}</span>

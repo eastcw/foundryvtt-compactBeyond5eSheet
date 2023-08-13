@@ -14,6 +14,7 @@ export class CompactBeyond5e {
     // displayPassiveInvestigation: 'display-passive-inv',
     // displayPassiveStealth: 'display-passive-ste',
     showSpellSlotBubbles: 'show-spell-slot-bubbles',
+    showFullCurrencyNames: 'show-full-currency-names',
   };
 
   /**
@@ -48,6 +49,15 @@ export class CompactBeyond5e {
       hint: 'CB5ES.settings.showSpellSlotBubbles.Hint',
     });
 
+    game.settings.register(this.MODULE_ID, this.SETTINGS.showFullCurrencyNames, {
+      name: 'CB5ES.settings.showFullCurrencyNames.Label',
+      default: false,
+      type: Boolean,
+      scope: 'world',
+      config: true,
+      hint: 'CB5ES.settings.showFullCurrencyNames.Hint',
+    });
+
     // game.settings.register(this.MODULE_ID, this.SETTINGS.displayPassivePerception, {
     //   name: 'CB5ES.settings.displayPassives.prc.Label',
     //   default: false,
@@ -76,6 +86,22 @@ export class CompactBeyond5e {
     //   scope: 'world',
     //   config: true,
     // });
+  }
+
+  // Add currency abbreviations to actor
+  // eslint-disable-next-line no-unused-vars
+  static addCurrencyAbbreviations(app, html, data) {
+    let currencies = CONFIG.DND5E.currencies;
+    this.log(true, currencies);
+    for (let i in currencies) {
+      let label = document.getElementsByClassName(`currency-abbreviation ${i}`)[0];
+      if (game.settings.get(this.MODULE_ID, this.SETTINGS.showFullCurrencyNames)) {
+        label.innerText = currencies[i].label;
+      } else {
+        label.innerText = currencies[i].abbreviation;
+      }
+      this.log(true, currencies[i].abbreviation);
+    }
   }
 
   // Add Spell Slot Marker
@@ -195,6 +221,7 @@ export class CompactBeyond5e {
 
     Hooks.on('renderCompactBeyond5eSheet', (app, html, data) => {
       this.spellSlotMarker(app, html, data);
+      this.addCurrencyAbbreviations(app, html, data);
     });
   }
 }
