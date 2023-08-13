@@ -27,7 +27,7 @@
 
   .window-content {
     box-sizing: border-box;
-    color: var(--color);
+    // color: var(--color);
 
     padding: calc(#{$space} / 2);
 
@@ -144,22 +144,22 @@
   }
 
   /* More Overrides for Whetstone Support */
-  .proficient .proficiency-toggle,
-  .traits i.fas,
-  .inventory-list .item-controls .item-toggle.active,
-  .inventory-list .item .item-name {
-    color: var(--color);
-  }
+  // .proficient .proficiency-toggle,
+  // .traits i.fas,
+  // .inventory-list .item-controls .item-toggle.active,
+  // .inventory-list .item .item-name {
+  //   color: var(--color);
+  // }
 
-  .proficiency-toggle {
-    color: var(--accent-text);
-  }
+  // .proficiency-toggle {
+  //   color: var(--accent-text);
+  // }
 
-  .inventory-list .item-controls a,
-  span.sep,
-  .traits .inactive {
-    color: var(--tertiary-text);
-  }
+  // .inventory-list .item-controls a,
+  // span.sep,
+  // .traits .inactive {
+  //   color: var(--tertiary-text);
+  // }
 
   /* Scrollbars */
 
