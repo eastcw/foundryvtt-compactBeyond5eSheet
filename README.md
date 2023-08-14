@@ -52,10 +52,11 @@ Got rid of the spell school to make room for the more compressed table area. I c
 
 ## Options
 
-| **Name**                          | Description                                                                                 |
-| --------------------------------- | ------------------------------------------------------------------------------------------- |
-| **Use Expanded Sheet as Limited** | Uses the expanded sheet for the limited view.                                               |
-| **Display spell slot bubbles**    | Displays a set of checkboxes to show you how many levelled spell slots are left at each level, a la DnDBeyond. |
+| **Name**                          | Description                                                                                                 |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Use Expanded Sheet as Limited** | Uses the expanded sheet for the limited view.                                                               |
+| **Show spell slot bubbles**       | Shows a set of checkboxes to show you how many levelled spell slots are left at each level, a la DnDBeyond. |
+| **Show full currency names**      | Shows the full currency names (Gold, Silver, etc) instead of the abbreviated names (GP, SP, etc).           |
 
 This sheet respects the 5e System setting: "Disable Experience Tracking"
 
