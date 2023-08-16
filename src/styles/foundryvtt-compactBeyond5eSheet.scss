@@ -124,10 +124,13 @@
   /* complicated flex layout to allow tab areas to be scrollable */
   /* instrumental: https://stackoverflow.com/questions/52487743/prevent-flex-item-from-exceeding-parent-height-and-make-scroll-bar-work */
 
+  .sheet-sidebar {
+    overflow: auto;
+  }
+
   .sheet-sidebar,
   .items-header.flexrow,
   .item.flexrow {
-    overflow: auto;
     scrollbar-width: thin;
     padding-right: $scrollbar-width;
   }
