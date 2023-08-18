@@ -17,6 +17,12 @@
           "Label": "Show Passive Stealth"
         }
       },
+      "darkMode": {
+        "Label": "Colour Scheme",
+        "Hint": "Choose a colour scheme for the sheet to follow",
+        "default": "Foundry Theme",
+        "dark": "Dark Mode"
+      },
       "expandedLimited": {
         "Label": "Use Expanded Sheet as Limited",
         "Hint": "Show the full character sheet for users who have the Limited permission for a given Actor."
