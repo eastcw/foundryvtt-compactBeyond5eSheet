@@ -60,9 +60,7 @@ export class CompactBeyond5e {
       },
     });
     const colourScheme = game.settings.get(this.MODULE_ID, this.SETTINGS.darkMode);
-    if (colourScheme === 'dark') {
-      document.querySelector('html').classList.add(darkModeClass);
-    }
+    colourScheme === 'dark' && document.querySelector('html').classList.add(darkModeClass);
 
     game.settings.register(this.MODULE_ID, this.SETTINGS.showSpellSlotBubbles, {
       name: 'CB5ES.settings.showSpellSlotBubbles.Label',

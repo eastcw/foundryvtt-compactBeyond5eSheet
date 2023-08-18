@@ -19,7 +19,7 @@
       },
       "darkMode": {
         "Label": "Colour Scheme",
-        "Hint": "Choose a colour scheme for the sheet to follow",
+        "Hint": "Choose a colour scheme for the sheet to follow.",
         "default": "Foundry Theme",
         "dark": "Dark Mode"
       },
