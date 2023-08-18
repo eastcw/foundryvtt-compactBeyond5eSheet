@@ -3,3 +3,17 @@ $border-radius: 4px;
 
 $space: 10px;
 $scrollbar-width: 6px;
+
+.dnd5e.sheet.actor.character.cb5es {
+  --accent-text: var(--color-text-dark-secondary);
+  --color: var(--color-text-dark-primary);
+  --accent-gray: var(--color-text-light-heading);
+  --groove-gray: var(--color-border-light-highlight);
+  --highlight: #44191a; // same as dnd5e
+  --light-highlight: #9e6e6f;
+  --bright-highlight: #80191a;
+  --light-gray: var(--color-border-light-primary);
+  --tertiary-text: var(--color-text-dark-inactive);
+  --spellbook-active: #d200ff1a;
+  --spellbook-always-active: #0084ff1a;
+}
