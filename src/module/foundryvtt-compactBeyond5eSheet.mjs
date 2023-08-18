@@ -45,7 +45,7 @@ export class CompactBeyond5e {
     game.settings.register(this.MODULE_ID, this.SETTINGS.darkMode, {
       name: 'CB5ES.settings.darkMode.Label',
       type: String,
-      scope: 'client',
+      scope: 'world',
       config: true,
       default: 'default',
       hint: 'CB5ES.settings.darkMode.Hint',
@@ -66,7 +66,7 @@ export class CompactBeyond5e {
       name: 'CB5ES.settings.showSpellSlotBubbles.Label',
       default: true,
       type: Boolean,
-      scope: 'client',
+      scope: 'world',
       config: true,
       hint: 'CB5ES.settings.showSpellSlotBubbles.Hint',
     });
@@ -75,7 +75,7 @@ export class CompactBeyond5e {
       name: 'CB5ES.settings.showFullCurrencyNames.Label',
       default: false,
       type: Boolean,
-      scope: 'client',
+      scope: 'world',
       config: true,
       hint: 'CB5ES.settings.showFullCurrencyNames.Hint',
     });
