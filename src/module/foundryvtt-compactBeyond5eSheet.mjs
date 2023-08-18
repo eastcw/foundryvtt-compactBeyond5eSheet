@@ -9,6 +9,7 @@ export class CompactBeyond5e {
 
   static SETTINGS = {
     expandedLimited: 'expanded-limited',
+    darkMode: 'dark-mode',
     // displayPassivePerception: 'display-passive-per',
     // displayPassiveInsight: 'display-passive-ins',
     // displayPassiveInvestigation: 'display-passive-inv',
@@ -40,11 +41,34 @@ export class CompactBeyond5e {
       hint: 'CB5ES.settings.expandedLimited.Hint',
     });
 
+    const darkModeClass = 'cb5es-dark-mode';
+    game.settings.register(this.MODULE_ID, this.SETTINGS.darkMode, {
+      name: 'CB5ES.settings.darkMode.Label',
+      type: String,
+      scope: 'client',
+      config: true,
+      default: 'default',
+      hint: 'CB5ES.settings.darkMode.Hint',
+      choices: {
+        default: 'CB5ES.settings.darkMode.default',
+        dark: 'CB5ES.settings.darkMode.dark',
+      },
+      onChange: (data) => {
+        data === 'dark'
+          ? document.querySelector('html').classList.add(darkModeClass)
+          : document.querySelector('html').classList.remove(darkModeClass);
+      },
+    });
+    const colourScheme = game.settings.get(this.MODULE_ID, this.SETTINGS.darkMode);
+    if (colourScheme === 'dark') {
+      document.querySelector('html').classList.add(darkModeClass);
+    }
+
     game.settings.register(this.MODULE_ID, this.SETTINGS.showSpellSlotBubbles, {
       name: 'CB5ES.settings.showSpellSlotBubbles.Label',
       default: true,
       type: Boolean,
-      scope: 'world',
+      scope: 'client',
       config: true,
       hint: 'CB5ES.settings.showSpellSlotBubbles.Hint',
     });
@@ -53,7 +77,7 @@ export class CompactBeyond5e {
       name: 'CB5ES.settings.showFullCurrencyNames.Label',
       default: false,
       type: Boolean,
-      scope: 'world',
+      scope: 'client',
       config: true,
       hint: 'CB5ES.settings.showFullCurrencyNames.Hint',
     });

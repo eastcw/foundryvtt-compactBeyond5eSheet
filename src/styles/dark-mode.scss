@@ -1,7 +1,7 @@
-:root.cb5esDarkmode {
+:root.cb5es-dark-mode {
   .dnd5e.sheet.actor.character.cb5es {
     --accent-text: var(--color-text-dark-secondary);
-    --color: var(--color-text-dark-primary);
+    --color: var(#ffffff);
     --accent-gray: var(--color-text-light-heading);
     --groove-gray: var(--color-border-light-highlight);
     --highlight: #44191a; // same as dnd5e
@@ -13,7 +13,8 @@
     --spellbook-always-active: #0084ff1a;
 
     .window-content {
-      background: url('/modules/compact-beyond-5e-sheet/assets/dark-parchment.jpg') repeat;
+      background: url('/modules/compact-beyond-5e-sheet/assets/dark-parchment.webp') repeat;
+      color: var(--color);
     }
   }
 }
