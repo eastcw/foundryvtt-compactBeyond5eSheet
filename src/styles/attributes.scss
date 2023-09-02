@@ -9,7 +9,7 @@ ul.attributes {
   padding: 0;
 
   display: grid;
-  overflow: overlay;
+  overflow: visible;
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   grid-gap: calc($space / 2);
 }
