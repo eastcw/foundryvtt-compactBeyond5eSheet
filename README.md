@@ -9,7 +9,7 @@
 ![Foundry Recommended Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Feastcw%2Ffoundryvtt-compactBeyond5eSheet%2Fmaster%2Fsrc%2Fmodule.json&query=%24.compatibility.verified&label=Recommended%20Foundry%20Version&color=green)
 ![Manifest+ Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Feastcw%2Ffoundryvtt-compactBeyond5eSheet%2Fmaster%2Fsrc%2Fmodule.json&query=%24.manifestPlusVersion&label=Manifest%2B%20Version&color=blue)
 
-[![Static Badge](https://img.shields.io/badge/-Buy%20me%20a%20drink-purple)](https://ko-fi.com/eastcw)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J4NM2RD)
 
 Shamelessly taking ideas (and some code) from both the [DnDBeyond character sheet](https://github.com/jopeek/fvtt-dndbeyond-character-sheet) and the [Tidy 5e character sheet](https://github.com/sdenec/tidy5e-sheet). This is an information-dense character sheet for Foundry users who like the feel of D&DBeyond's character sheet, but want it to fit better within the Foundry UI.
 
