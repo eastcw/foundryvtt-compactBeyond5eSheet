@@ -1,7 +1,6 @@
 :root.cb5es-dark-mode {
-  .dnd5e.sheet.actor.character.cb5es,
-  .cb5es .character-actions-dnd5e {
-    --accent-text: #aaaaa1;
+  .dnd5e.sheet.actor.character.cb5es {
+    --accent-text: #c1c1b7;
     --color: #f5f5eb;
     --accent-gray: var(--color-text-light-heading);
     --groove-gray: var(--color-border-light-highlight);
@@ -18,46 +17,11 @@
       color: var(--color);
     }
 
-    .item-toggle.active,
-    i.attuned {
-      color: var(--bright-highlight);
-    }
-
     .encumberance {
       .encumbered {
         color: var(--light-highlight);
         // text-shadow: var(--accent-text);
       }
-    }
-
-    input[type='text'],
-    input[type='number'],
-    select,
-    h4.box-title,
-    .item .item-name,
-    .form-group label,
-    .fancy-value {
-      color: var(--color);
-    }
-
-    button,
-    span.max,
-    input::placeholder,
-    .config-button,
-    label.recharge,
-    .ability i {
-      color: var(--accent-text);
-    }
-
-    i.original-class,
-    .traits .inactive,
-    h4.rollable:hover,
-    .rollable:hover > h4 {
-      color: var(--tertiary-text);
-    }
-
-    .item-image:hover {
-      background-image: url('/icons/svg/d20-highlight.svg') !important;
     }
   }
 }
