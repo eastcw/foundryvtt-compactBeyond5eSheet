@@ -44,7 +44,7 @@ export class CompactBeyond5e {
       name: 'CB5ES.settings.showSpellSlotBubbles.Label',
       default: true,
       type: Boolean,
-      scope: 'world',
+      scope: 'client',
       config: true,
       hint: 'CB5ES.settings.showSpellSlotBubbles.Hint',
     });
@@ -53,7 +53,7 @@ export class CompactBeyond5e {
       name: 'CB5ES.settings.showFullCurrencyNames.Label',
       default: false,
       type: Boolean,
-      scope: 'world',
+      scope: 'client',
       config: true,
       hint: 'CB5ES.settings.showFullCurrencyNames.Hint',
     });
