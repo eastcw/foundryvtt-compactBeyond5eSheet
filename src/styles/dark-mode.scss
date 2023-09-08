@@ -1,15 +1,15 @@
 :root.cb5es-dark-mode {
   .dnd5e.sheet.actor.character.cb5es,
   .cb5es .character-actions-dnd5e {
-    --accent-text: #aaaaa1;
     --color: #f5f5eb;
+    --accent-text: #aaaaa1;
+    --tertiary-text: #86867f;
     --accent-gray: var(--color-text-light-heading);
     --groove-gray: var(--color-border-light-2);
     --highlight: #80191a;
     --light-highlight: #9e6e6f;
     --bright-highlight: #80191a;
     --light-gray: var(--color-border-light-primary);
-    --tertiary-text: #b6aea5;
     --spellbook-active: #d200ff1a;
     --spellbook-always-active: #0084ff1a;
     --darker-text: #5c5956;
