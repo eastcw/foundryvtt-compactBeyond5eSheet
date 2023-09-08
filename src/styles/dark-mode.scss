@@ -4,14 +4,15 @@
     --accent-text: #aaaaa1;
     --color: #f5f5eb;
     --accent-gray: var(--color-text-light-heading);
-    --groove-gray: var(--color-border-light-highlight);
+    --groove-gray: var(--color-border-light-2);
     --highlight: #80191a;
     --light-highlight: #9e6e6f;
     --bright-highlight: #80191a;
     --light-gray: var(--color-border-light-primary);
-    --tertiary-text: #b0aea3;
+    --tertiary-text: #b6aea5;
     --spellbook-active: #d200ff1a;
     --spellbook-always-active: #0084ff1a;
+    --darker-text: #5c5956;
 
     .window-content {
       background: url('/modules/compact-beyond-5e-sheet/assets/dark-parchment.webp') repeat;
@@ -36,7 +37,8 @@
     h4.box-title,
     .item .item-name,
     .form-group label,
-    .fancy-value {
+    .fancy-value,
+    .traits i.fas:hover {
       color: var(--color);
     }
 
@@ -45,19 +47,31 @@
     input::placeholder,
     .config-button,
     label.recharge,
-    .ability i {
+    .ability i,
+    .items-list {
       color: var(--accent-text);
     }
 
     i.original-class,
     .traits .inactive,
     h4.rollable:hover,
-    .rollable:hover > h4 {
+    .rollable:hover > h4,
+    .spell-slots,
+    .spell-action,
+    .spell-target,
+    .spell-school {
       color: var(--tertiary-text);
     }
 
     .item-image:hover {
       background-image: url('/icons/svg/d20-highlight.svg') !important;
+    }
+
+    input.filter {
+      color: var(--darker-text);
+      ::placeholder {
+        color: var(--tertiary-text);
+      }
     }
   }
 }
