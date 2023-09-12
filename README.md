@@ -52,12 +52,12 @@ Got rid of the spell school to make room for the more compressed table area. I c
 
 ## Options
 
-| **Name**                          | Description                                                                                                                                                                                                               |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Use Expanded Sheet as Limited** | Uses the expanded sheet for the limited view.                                                                                                                                                                             |
-| **Colour Scheme**                 | Allows you to choose between the standard Foundry colour scheme similar to the default character sheet, and an in-built dark mode. NB, this dark mode will onyl affect the character sheet, not the rest of the software. |
-| **Show spell slot bubbles**       | Shows a set of checkboxes to show you how many levelled spell slots are left at each level, a la DnDBeyond.                                                                                                               |
-| **Show full currency names**      | Shows the full currency names (Gold, Silver, etc) instead of the abbreviated names (GP, SP, etc).                                                                                                                         |
+| **Name**                          | Description                                                                                                                                                                                                              |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Use Expanded Sheet as Limited** | Uses the expanded sheet for the limited view.                                                                                                                                                                            |
+| **Colour Scheme**                 | Allows you to choose between the standard Foundry colour scheme similar to the default character sheet, or an in-built dark mode. NB, this dark mode will only affect the character sheet, not the rest of the software. |
+| **Show spell slot bubbles**       | Shows a set of checkboxes to show you how many levelled spell slots are left at each level, a la DnDBeyond.                                                                                                              |
+| **Show full currency names**      | Shows the full currency names (Gold, Silver, etc) instead of the abbreviated names (GP, SP, etc).                                                                                                                        |
 
 This sheet respects the 5e System setting: "Disable Experience Tracking"
 
