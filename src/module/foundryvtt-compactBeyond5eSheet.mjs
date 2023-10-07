@@ -111,14 +111,16 @@ export class CompactBeyond5e {
   }
 
   // Add currency abbreviations to actor
-  static addCurrencyAbbreviations() {
-    let currencies = CONFIG.DND5E.currencies;
+  // eslint-disable-next-line no-unused-vars
+  static addCurrencyAbbreviations(app, html, data) {
+    const currencies = CONFIG.DND5E.currencies;
+    const labels = html.find('.currency-abbreviation');
     for (let i in currencies) {
-      let label = document.getElementsByClassName(`currency-abbreviation ${i}`)[0];
+      let label = labels.filter(`.${i}`);
       if (game.settings.get(this.MODULE_ID, this.SETTINGS.showFullCurrencyNames)) {
-        label.innerText = currencies[i].label;
+        label.html(currencies[i].label);
       } else {
-        label.innerText = currencies[i].abbreviation;
+        label.html(currencies[i].abbreviation);
       }
     }
   }
@@ -240,7 +242,7 @@ export class CompactBeyond5e {
 
     Hooks.on('renderCompactBeyond5eSheet', (app, html, data) => {
       this.spellSlotMarker(app, html, data);
-      this.addCurrencyAbbreviations();
+      this.addCurrencyAbbreviations(app, html, data);
     });
   }
 }
