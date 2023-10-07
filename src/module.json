@@ -18,14 +18,14 @@
   "license": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/blob/master/LICENSE",
   "bugs": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/issues",
   "changelog": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/releases",
-  "download": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/releases/download/v2.4.0-alpha3/module.zip",
+  "download": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/releases/download/v2.4.0/module.zip",
   "manifest": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/releases/latest/download/module.json",
   "readme": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/blob/master/README.md",
   "url": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/",
-  "version": "2.4.0-alpha3",
+  "version": "2.4.0",
   "compatibility": {
     "minimum": "10",
-    "verified": "11.308"
+    "verified": "11.313"
   },
   "scripts": [],
   "esmodules": ["module/foundryvtt-compactBeyond5eSheet.js"],
