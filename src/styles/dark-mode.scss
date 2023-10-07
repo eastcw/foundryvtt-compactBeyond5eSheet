@@ -68,7 +68,9 @@
       background-image: url('/icons/svg/d20-highlight.svg') !important;
     }
 
-    input.filter {
+    input.filter,
+    .inventory-list .item-summary a.content-link,
+    .inventory-list .item-summary a.inline-roll {
       color: var(--darker-text);
       ::placeholder {
         color: var(--tertiary-text);
