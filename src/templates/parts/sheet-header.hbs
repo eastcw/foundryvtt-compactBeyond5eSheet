@@ -6,7 +6,7 @@
 
   <section class="header-details">
     <h1>
-      <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'DND5E.Name' }}" />
+      <input name="name" type="text" {{#if options.locked}}class="locked"{{/if}} value="{{actor.name}}" placeholder="{{ localize 'DND5E.Name' }}" />
     </h1>
 
     {{!-- Character Summary --}}

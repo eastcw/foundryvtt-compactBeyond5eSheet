@@ -149,6 +149,12 @@ export class CompactBeyond5eSheet extends dnd5e.applications.actor.ActorSheet5eC
 
     const { abilities, attributes, bonuses, details } = this.actor.system;
 
+    const options = {
+      locked: game.settings.get(CompactBeyond5e.MODULE_ID, CompactBeyond5e.SETTINGS.lockSheets),
+    };
+
+    sheetData.options = options;
+
     sheetData.moduleFilePath = `modules/${CompactBeyond5e.MODULE_ID}/`;
     sheetData.nextLevel = details.level + 1;
 
@@ -167,6 +173,7 @@ export class CompactBeyond5eSheet extends dnd5e.applications.actor.ActorSheet5eC
       mod: abilities[attributes.spellcasting || 'int']?.mod ?? 0,
       prof: attributes.prof,
       spellAttackMod: sheetData.spellAttackMod,
+      options: options,
     });
 
     return sheetData;

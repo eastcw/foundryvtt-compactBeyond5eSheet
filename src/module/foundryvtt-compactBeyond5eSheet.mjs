@@ -15,6 +15,7 @@ export class CompactBeyond5e {
     // displayPassiveStealth: 'display-passive-ste',
     showSpellSlotBubbles: 'show-spell-slot-bubbles',
     showFullCurrencyNames: 'show-full-currency-names',
+    lockSheets: 'lock-sheets',
   };
 
   /**
@@ -56,6 +57,15 @@ export class CompactBeyond5e {
       scope: 'client',
       config: true,
       hint: 'CB5ES.settings.showFullCurrencyNames.Hint',
+    });
+
+    game.settings.register(this.MODULE_ID, this.SETTINGS.lockSheets, {
+      name: 'CB5ES.settings.lockSheets.Label',
+      default: false,
+      type: Boolean,
+      scope: 'world',
+      config: true,
+      hint: 'CB5ES.settings.lockSheets.Hint',
     });
 
     // game.settings.register(this.MODULE_ID, this.SETTINGS.displayPassivePerception, {

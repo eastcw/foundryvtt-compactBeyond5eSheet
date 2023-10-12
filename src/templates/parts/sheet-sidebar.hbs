@@ -20,9 +20,16 @@
     {{#each config.skills as |obj s|}}
     {{#with (lookup ../skills s) as |skill|}}
     <li class="proficiency-row skill flexrow {{#if skill.value}}proficient{{/if}}" data-property="skills" data-key="{{s}}">
-      <input type="hidden" name="system.skills.{{s}}.value" value="{{skill.baseValue}}" data-dtype="Number" />
 
-      <a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
+      {{#unless ../../options.locked}}
+      <input type="hidden" name="system.skills.{{s}}.value" value="{{skill.baseValue}}" data-dtype="Number" />
+      {{/unless}}
+
+      {{#if ../../options.locked}}
+        <span class="proficiency-toggle" style="flex-grow: 0; flex-shrink: 0; flex-basis: 16px;" title="{{skill.hover}}">{{{skill.icon}}}</span>
+      {{else}}
+        <a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
+      {{/if}}
 
       <span class="skill-ability">{{skill.ability}}</span>
 
