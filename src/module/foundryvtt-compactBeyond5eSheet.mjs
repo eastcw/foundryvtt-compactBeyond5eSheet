@@ -6,6 +6,7 @@ import { CompactBeyond5eSheet } from './compact-beyond-5e-sheet.mjs';
 export class CompactBeyond5e {
   static MODULE_ID = 'compact-beyond-5e-sheet';
   static MODULE_TITLE = 'Compact DnDBeyond 5e Character Sheet';
+  static PLAYER_SHEETS = [];
 
   static SETTINGS = {
     expandedLimited: 'expanded-limited',
@@ -15,7 +16,6 @@ export class CompactBeyond5e {
     // displayPassiveStealth: 'display-passive-ste',
     showSpellSlotBubbles: 'show-spell-slot-bubbles',
     showFullCurrencyNames: 'show-full-currency-names',
-    lockSheets: 'lock-sheets',
   };
 
   /**
@@ -29,6 +29,24 @@ export class CompactBeyond5e {
     if (shouldLog) {
       console.log(this.MODULE_ID, '|', ...args);
     }
+  }
+
+  static bindLock(actorId, status = true) {
+    const hasKey = this.PLAYER_SHEETS.some((el) => el.key === actorId);
+
+    if (!hasKey) {
+      this.PLAYER_SHEETS.push({ key: actorId, status: status });
+    }
+  }
+
+  static isLocked(actorId) {
+    const character = this.PLAYER_SHEETS.find((el) => el.key === actorId);
+    return character?.status ?? null;
+  }
+
+  static toggleLock(actorId) {
+    const character = this.PLAYER_SHEETS.find((el) => el.key === actorId);
+    character.status = !character.status;
   }
 
   static registerSettings() {
@@ -57,15 +75,6 @@ export class CompactBeyond5e {
       scope: 'client',
       config: true,
       hint: 'CB5ES.settings.showFullCurrencyNames.Hint',
-    });
-
-    game.settings.register(this.MODULE_ID, this.SETTINGS.lockSheets, {
-      name: 'CB5ES.settings.lockSheets.Label',
-      default: false,
-      type: Boolean,
-      scope: 'world',
-      config: true,
-      hint: 'CB5ES.settings.lockSheets.Hint',
     });
 
     // game.settings.register(this.MODULE_ID, this.SETTINGS.displayPassivePerception, {
@@ -229,6 +238,24 @@ export class CompactBeyond5e {
     Hooks.on('renderCompactBeyond5eSheet', (app, html, data) => {
       this.spellSlotMarker(app, html, data);
       this.addCurrencyAbbreviations();
+
+      // Make a header element and attach it to the window title.
+      // Definitely not the most official way of doing things, but it works.
+      this.bindLock(data.actor._id);
+      const headerbtn = document.createElement('a');
+      headerbtn.classList.add('control');
+      headerbtn.innerText = this.isLocked(data.actor._id) ? 'Locked' : 'Unlocked';
+      headerbtn.onclick = () => {
+        this.toggleLock(data.actor._id);
+        app.close();
+
+        // This will wait 250 milliseconds to reopen the sheet.
+        setTimeout(() => {
+          app.render(true);
+        }, 250);
+      };
+
+      html.find('.window-title')[0].after(headerbtn);
     });
   }
 }

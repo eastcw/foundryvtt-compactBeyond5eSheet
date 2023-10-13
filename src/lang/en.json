@@ -28,10 +28,6 @@
       "showSpellSlotBubbles": {
         "Label": "Show spell slot bubbles",
         "Hint": "Shows remaining spell slots as full or empty squares, a la DnDBeyond. You will need to close and reopen the character sheet for this setting to take effect."
-      },
-      "lockSheets": {
-        "Label": "Lock sheets",
-        "Hint": "Locks the name, actor size, ability score, ability score proficiency, and skill proficiency fields on a character sheet, so players can't accidentally edit them. This is only meant as a basic preventative measure. Use more specialized plugins if necessary. This setting is only available to GMs."
       }
     }
   }
