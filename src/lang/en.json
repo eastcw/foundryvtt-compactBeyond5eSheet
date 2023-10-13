@@ -34,6 +34,10 @@
       "showSpellSlotBubbles": {
         "Label": "Show spell slot bubbles",
         "Hint": "Shows remaining spell slots as full or empty squares, a la DnDBeyond. You will need to close and reopen the character sheet for this setting to take effect."
+      },
+      "lockSheets": {
+        "Label": "Enable lockable sheets",
+        "Hint": "Toggling this setting ON will lock character sheets by default. Players and GMs must click Unlock in order to make changes to the following fields: Name, Actor Size, Ability Scores, Ability Score Proficiencies, and Skill Proficiencies. This is only meant as a basic preventative measure. This setting is only available to GMs. All currently open sheets will need to be closed and reopened."
       }
     }
   }
