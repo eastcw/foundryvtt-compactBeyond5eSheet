@@ -28,15 +28,15 @@
         "Hint": "Show the full character sheet for users who have the Limited permission for a given Actor."
       },
       "showFullCurrencyNames": {
-        "Label": "Show full currency names",
+        "Label": "Show Full Currency Names",
         "Hint": "Show the full currency names (Gold, Silver, Platinum) instead of the abbreviated names (GP, SP, PP). You will need to close and reopen the character sheet for this setting to take effect."
       },
       "showSpellSlotBubbles": {
-        "Label": "Show spell slot bubbles",
+        "Label": "Show Spell Slot Bubbles",
         "Hint": "Shows remaining spell slots as full or empty squares, a la DnDBeyond. You will need to close and reopen the character sheet for this setting to take effect."
       },
       "lockSheets": {
-        "Label": "Enable lockable sheets",
+        "Label": "Enable Lockable Sheets",
         "Hint": "Toggling this setting ON will lock character sheets by default. Players and GMs must click Unlock in order to make changes to the following fields: Name, Actor Size, Ability Scores, Ability Score Proficiencies, and Skill Proficiencies. This is only meant as a basic preventative measure. This setting is only available to GMs. All currently open sheets will need to be closed and reopened for this setting to take effect."
       }
     }
