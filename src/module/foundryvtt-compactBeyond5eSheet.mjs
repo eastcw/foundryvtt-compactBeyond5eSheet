@@ -61,6 +61,15 @@ export class CompactBeyond5e {
       hint: 'CB5ES.settings.expandedLimited.Hint',
     });
 
+    game.settings.register(this.MODULE_ID, this.SETTINGS.lockSheets, {
+      name: 'CB5ES.settings.lockSheets.Label',
+      default: false,
+      type: Boolean,
+      scope: 'world',
+      config: true,
+      hint: 'CB5ES.settings.lockSheets.Hint',
+    });
+
     const darkModeClass = 'cb5es-dark-mode';
     game.settings.register(this.MODULE_ID, this.SETTINGS.darkMode, {
       name: 'CB5ES.settings.darkMode.Label',
@@ -98,15 +107,6 @@ export class CompactBeyond5e {
       scope: 'client',
       config: true,
       hint: 'CB5ES.settings.showFullCurrencyNames.Hint',
-    });
-
-    game.settings.register(this.MODULE_ID, this.SETTINGS.lockSheets, {
-      name: 'CB5ES.settings.lockSheets.Label',
-      default: false,
-      type: Boolean,
-      scope: 'world',
-      config: true,
-      hint: 'CB5ES.settings.lockSheets.Hint',
     });
 
     // game.settings.register(this.MODULE_ID, this.SETTINGS.displayPassivePerception, {

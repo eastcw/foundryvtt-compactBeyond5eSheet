@@ -2,6 +2,7 @@
   .dnd5e.sheet.actor.character.cb5es,
   .cb5es .character-actions-dnd5e {
     --color: #f5f5eb;
+    --background-shade: #20201e;
     --accent-text: #aaaaa1;
     --tertiary-text: #86867f;
     --accent-gray: var(--color-text-light-heading);
@@ -29,6 +30,10 @@
         color: var(--light-highlight);
         // text-shadow: var(--accent-text);
       }
+    }
+
+    option {
+      background: var(--background-shade);
     }
 
     input[type='text'],
