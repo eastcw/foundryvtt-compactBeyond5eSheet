@@ -1,13 +1,13 @@
 <div class="traits">
   <div class="form-group {{#unless system.attributes.exhaustion}}inactive{{/unless}}">
     <label>{{localize "DND5E.Exhaustion"}}</label>
-    <input type="text" name="system.attributes.exhaustion" data-dtype="Number" placeholder="0"
+    <input type="text" name="system.attributes.exhaustion" {{#if options.locked}}class="locked"{{/if}} data-dtype="Number" placeholder="0"
       value="{{system.attributes.exhaustion}}" />
   </div>
 
   <div class="form-group">
     <label>{{localize "DND5E.Size"}}</label>
-    <select class="actor-size" name="system.traits.size">
+    <select {{#if options.locked}}class="locked"{{/if}} class="actor-size" name="system.traits.size">
       {{#select system.traits.size}}
       {{#each config.actorSizes as |label size|}}
       <option value="{{size}}">{{label}}</option>
