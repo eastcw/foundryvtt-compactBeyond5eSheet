@@ -15,7 +15,7 @@ Shamelessly taking ideas (and some code) from both the [DnDBeyond character shee
 
 ## Installation
 
-Search the Foundry mosule repository for 'Compact DnDBeyond 5e Character Sheet' or copy the module.json link from below.
+Search the Foundry module repository for 'Compact DnDBeyond 5e Character Sheet' or copy the module.json link from below.
 
 Module JSON:
 
