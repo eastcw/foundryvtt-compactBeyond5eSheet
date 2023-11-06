@@ -17,8 +17,8 @@
 
   {{!-- Skills --}}
   <ul class="skills-list">
-    {{#each config.skills as |obj s|}}
-    {{#with (lookup ../skills s) as |skill|}}
+  {{#each config.skills as |obj s|}}
+  {{#with (lookup ../skills s) as |skill|}}
     <li class="proficiency-row skill flexrow {{#if skill.value}}proficient{{/if}}" data-property="skills" data-key="{{s}}">
 
       {{#unless ../../options.locked}}
@@ -31,13 +31,13 @@
         <a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
       {{/if}}
 
-      <span class="skill-ability">{{skill.ability}}</span>
-
       <div class="skill-name-controls">
         <h4 class="skill-name rollable">{{skill.label}}</h4>
         <a class="config-button" data-action="skill" title="{{localize 'DND5E.SkillConfigure'}}"><i
             class="fas fa-cog"></i></a>
       </div>
+
+      <span class="skill-ability">{{skill.abbreviation}}</span>
 
       <span class="skill-mod">{{numberFormat skill.total decimals=0 sign=true}}</span>
 
