@@ -1,3 +1,4 @@
+<{{elements.inventory}}>
 {{#unless isVehicle}}
 <div class="inventory-filters flexrow">
   <ul class="filter-list flexrow" data-filter="features">
@@ -29,7 +30,7 @@
 
     {{#if ../owner}}
     <div class="item-controls">
-      <a class="item-control item-create" title="{{localize 'DND5E.FeatureAdd'}}" {{#each section.dataset as |v
+      <a class="item-control item-action" data-action="create" data-tooltip="{{localize 'DND5E.FeatureAdd'}}" {{#each section.dataset as |v
         k|}}data-{{k}}="{{v}}" {{/each}}>
         <i class="fas fa-plus"></i> {{localize "DND5E.Add"}}
       </a>
@@ -42,20 +43,20 @@
     {{#with (lookup @root.itemContext item.id) as |ctx|}}
     <li class="item flexrow {{#if ctx.isDepleted}}depleted{{/if}}" data-item-id="{{item.id}}">
       <div class="item-name flexrow rollable">
-        <div class="item-image" tabindex="0" role="button" aria-label="{{item.name}}"
+        <div class="item-image item-action" data-action="use" tabindex="0" role="button" aria-label="{{item.name}}"
           style="background-image: url('{{item.img}}')"></div>
-        <h4>
+        <h4 class="item-action" data-action="expand">
           {{#if (eq item.type "subclass")}}&rdsh;{{/if}}
           {{item.name}}
           {{#if item.system.isOriginalClass}} <i class="original-class fas fa-sun"
-            title="{{localize 'DND5E.ClassOriginal'}}"></i>{{/if}}
+            data-tooltip="{{localize 'DND5E.ClassOriginal'}}"></i>{{/if}}
         </h4>
       </div>
 
       {{#if section.hasActions}}
       <div class="item-detail item-uses">
         {{#if ctx.isOnCooldown}}
-        <a class="item-recharge rollable">{{item.labels.recharge}}</a>
+        <a class="item-action rollable" data-action="recharge">{{item.labels.recharge}}</a>
         {{else if item.system.recharge.value}}
         {{localize "DND5E.Charged"}}
         {{else if ctx.hasUses}}
@@ -70,11 +71,11 @@
 
       <div class="item-detail item-target spell-target">
         {{#if (eq item.system.target.type 'self')}}
-        <span title="{{item.labels.target}}">{{item.labels.target}}</span>
+        <span data-tooltip="{{item.labels.target}}">{{item.labels.target}}</span>
         {{else}}
-        <span title="{{localize 'DND5E.Range'}}: {{item.labels.range}}">{{item.labels.range}}</span>
+        <span data-tooltip="{{localize 'DND5E.Range'}}: {{item.labels.range}}">{{item.labels.range}}</span>
         {{#if item.labels.target}}
-        <small title="{{item.labels.target}}">
+        <small data-tooltip="{{item.labels.target}}">
           {{item.labels.target}}
         </small>
         {{/if}}
@@ -112,12 +113,12 @@
       {{#if @root.owner}}
       <div class="item-controls">
         {{#if section.crewable}}
-        <a class="item-control item-toggle {{ctx.toggleClass}}" title="{{ctx.toggleTitle}}">
+        <a class="item-control item-action {{ctx.toggleClass}}" data-action="crew" data-tooltip="{{ctx.toggleTitle}}">
           <i class="fas fa-sun"></i>
         </a>
         {{/if}}
-        <a class="item-control item-edit" title="{{localize 'DND5E.ItemEdit'}}"><i class="fas fa-edit"></i></a>
-        <a class="item-control item-delete" title="{{localize 'DND5E.ItemDelete'}}"><i class="fas fa-trash"></i></a>
+        <a class="item-control item-action" data-action="edit" data-tooltip="{{localize 'DND5E.ItemEdit'}}"><i class="fas fa-edit"></i></a>
+        <a class="item-control item-action" data-action="delete" data-tooltip="{{localize 'DND5E.ItemDelete'}}"><i class="fas fa-trash"></i></a>
       </div>
       {{/if}}
     </li>
@@ -126,3 +127,4 @@
   </ol>
   {{/each}}
 </ol>
+</{{elements.inventory}}>

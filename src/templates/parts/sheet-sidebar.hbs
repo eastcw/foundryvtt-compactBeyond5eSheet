@@ -26,14 +26,14 @@
       {{/unless}}
 
       {{#if ../../options.locked}}
-        <span class="proficiency-toggle" style="flex-grow: 0; flex-shrink: 0; flex-basis: 16px;" title="{{skill.hover}}">{{{skill.icon}}}</span>
+        <span class="proficiency-toggle" style="flex-grow: 0; flex-shrink: 0; flex-basis: 16px;" data-tooltip="{{skill.hover}}">{{{skill.icon}}}</span>
       {{else}}
-        <a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
+        <a class="proficiency-toggle skill-proficiency" data-tooltip="{{skill.hover}}">{{{skill.icon}}}</a>
       {{/if}}
 
       <div class="skill-name-controls">
         <h4 class="skill-name rollable">{{skill.label}}</h4>
-        <a class="config-button" data-action="skill" title="{{localize 'DND5E.SkillConfigure'}}"><i
+        <a class="config-button" data-action="skill" data-tooltip="{{localize 'DND5E.SkillConfigure'}}"><i
             class="fas fa-cog"></i></a>
       </div>
 
@@ -41,7 +41,7 @@
 
       <span class="skill-mod">{{numberFormat skill.total decimals=0 sign=true}}</span>
 
-      <span class="skill-passive" title="{{ localize 'DND5E.SkillPassiveHint' skill=skill.label }}">
+      <span class="skill-passive" data-tooltip="{{ localize 'DND5E.SkillPassiveHint' skill=skill.label }}">
         ({{skill.passive}})
       </span>
     </li>

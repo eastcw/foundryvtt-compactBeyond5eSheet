@@ -12,14 +12,14 @@
         class="ability-score{{#if ../options.locked}} locked{{/if}}"
         placeholder="10" data-dtype="Number" >
       <div class="ability-modifiers flexrow">
-        <span class="ability-mod" title="{{ localize 'DND5E.Modifier' }}">{{numberFormat ability.mod decimals=0
+        <span class="ability-mod" data-tooltip="{{ localize 'DND5E.Modifier' }}">{{numberFormat ability.mod decimals=0
           sign=true}}</span>
         {{#unless ../options.locked}}
         <input type="hidden" name="system.abilities.{{id}}.proficient" value="{{ability.baseProf}}"
           data-dtype="Number"/>
         {{/unless}}
-        <a class="proficiency-toggle ability-proficiency" title="{{ localize 'DND5E.Proficiency' }}">{{{ability.icon}}}</a>
-        <span class="ability-save" title="{{ localize 'DND5E.SavingThrow' }}">{{numberFormat ability.save decimals=0
+        <a class="proficiency-toggle ability-proficiency" data-tooltip="{{ localize 'DND5E.Proficiency' }}">{{{ability.icon}}}</a>
+        <span class="ability-save" data-tooltip="{{ localize 'DND5E.SavingThrow' }}">{{numberFormat ability.save decimals=0
           sign=true}}</span>
       </div>
       <a class="config-button" data-action="ability" data-tooltip="{{localize 'DND5E.AbilityConfigure'}}">

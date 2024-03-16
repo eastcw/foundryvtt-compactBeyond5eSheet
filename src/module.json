@@ -22,10 +22,10 @@
   "manifest": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/releases/latest/download/module.json",
   "readme": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/blob/master/README.md",
   "url": "https://github.com/eastcw/foundryvtt-compactBeyond5eSheet/",
-  "version": "2.4.1",
+  "version": "3.0.0",
   "compatibility": {
-    "minimum": "10",
-    "verified": "11.314"
+    "minimum": "11",
+    "verified": "11.315"
   },
   "scripts": [],
   "esmodules": ["module/foundryvtt-compactBeyond5eSheet.js"],
@@ -44,8 +44,8 @@
         "id": "dnd5e",
         "type": "system",
         "compatibility": {
-          "minimum": "2.2.0",
-          "verified": "2.3.1"
+          "minimum": "3.0.0",
+          "verified": "3.0.4"
         }
       }
     ],
@@ -54,7 +54,7 @@
         "id": "character-actions-list-5e",
         "type": "module",
         "compatibility": {
-          "verified": "6.1.1"
+          "verified": "7.0.0"
         }
       }
     ],
