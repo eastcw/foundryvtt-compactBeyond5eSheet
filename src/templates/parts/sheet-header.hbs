@@ -55,7 +55,7 @@
     <div class="header-actions">
       <a class="rest short-rest">{{ localize 'DND5E.RestS' }}<i class="fas fa-hourglass-half"></i></a>
       <a class="rest long-rest">{{ localize 'DND5E.RestL' }}<i class="fas fa-hourglass-end"></i></a>
-      <a class="config-button" data-action="hit-dice" data-tooltip="{{localize 'DND5E.HitDiceConfig'}}">
+      <a class="config-button" data-action="hitDice" data-tooltip="{{localize 'DND5E.HitDiceConfig'}}">
         {{localize "DND5E.HitDice"}}: {{system.attributes.hd}}/{{system.details.level}}
       </a>
     </div>
@@ -107,7 +107,7 @@
       {{else}}
       <div class="attribute health">
         <h4 class="attribute-name box-title">{{localize "DND5E.HitPoints"}} <a class="config-button"
-            data-action="hit-points" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
+            data-action="hitPoints" data-tooltip="{{localize 'DND5E.HitPointsConfig'}}">
             <i class="fas fa-cog"></i>
           </a></h4>
 
