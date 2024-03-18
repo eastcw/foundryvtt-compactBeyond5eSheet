@@ -1,3 +1,4 @@
+<{{elements.inventory}}>
 <div class="inventory-tab-header">
 
   {{#unless isNPC}}
@@ -19,7 +20,7 @@
   <div class="currency">
     <h3>
       <strong>{{localize "DND5E.Currency"}}</strong>
-      <a class="currency-convert rollable" data-action="convertCurrency" title="Convert All Currency"><i
+      <a class="item-action rollable" data-action="currency" data-tooltip="DND5e.CurrencyManager.Title"><i
           class="fas fa-coins"></i></a>
     </h3>
     <div class="currency-inputs">
@@ -70,7 +71,7 @@
 
     {{#if ../owner}}
     <div class="item-controls">
-      <a class="item-control item-create" data-action="itemCreate" data-tooltip="DND5E.ItemCreate" {{#each
+      <a class="item-control item-action" data-action="create" data-tooltip="DND5E.ItemCreate" {{#each
         section.dataset as |v k|}}data-{{k}}="{{v}}" {{/each}}>
         <i class="fas fa-plus"></i> {{localize "DND5E.Add"}}
       </a>
@@ -81,21 +82,21 @@
   <ol class="item-list">
     {{#each section.items as |item iid|}}
     {{#with (lookup @root.itemContext item.id) as |ctx|}}
-    <li class="item flexrow {{section.css}}" data-item-id="{{item.id}}" {{#if
-      section.editableName}}data-item-index="{{iid}}" {{/if}}>
+    <li class="item flexrow {{section.css}}" data-item-id="{{item.id}}"
+      {{#if section.editableName}}data-item-index="{{iid}}" {{/if}}>
       <div class="item-name flexrow {{@root.rollableClass}}">
         {{#if section.editableName}}
         <input type="text" value="{{item.name}}">
         {{else}}
-        <div class="item-image" tabindex="0" role="button" aria-label="{{item.name}}"
+        <div class="item-image item-action" data-action="use" tabindex="0" role="button" aria-label="{{item.name}}"
           style="background-image: url('{{item.img}}')"></div>
-        <h4>
+        <h4 class="item-action" data-action="expand">
           {{item.name~}}
           {{~#if ctx.isStack}} ({{item.system.quantity}}){{/if}}
         </h4>
         {{#if ctx.attunement}}
         <div class="item-detail attunement">
-          <i class="fas {{ctx.attunement.icon}} {{ctx.attunement.cls}}" title="{{localize ctx.attunement.title}}"></i>
+          <i class="fas {{ctx.attunement.icon}} {{ctx.attunement.cls}}" data-tooltip="{{localize ctx.attunement.title}}"></i>
         </div>
         {{/if}}
         {{/if}}
@@ -140,17 +141,17 @@
       {{#if @root.owner}}
       <div class="item-controls">
         {{#if ctx.canToggle}}
-        <a class="item-control item-toggle {{ctx.toggleClass}}" data-action="itemToggle"
+        <a class="item-control item-action {{ctx.toggleClass}}" data-action="equip"
           data-tooltip='{{ctx.toggleTitle}}'>
           <i class="fas fa-shield-alt"></i>
         </a>
         {{/if}}
         {{#unless section.editableName}}
-        <a class="item-control item-edit" data-action="itemEdit" data-tooltip="DND5E.ItemEdit">
+        <a class="item-control item-action" data-action="edit" data-tooltip="DND5E.ItemEdit">
           <i class="fas fa-edit"></i>
         </a>
         {{/unless}}
-        <a class="item-control item-delete" data-action="itemDelete" data-tooltip="DND5E.ItemDelete">
+        <a class="item-control item-action" data-action="delete" data-tooltip="DND5E.ItemDelete">
           <i class="fas fa-trash"></i>
         </a>
       </div>
@@ -161,3 +162,4 @@
   </ol>
   {{/each}}
 </ol>
+</{{elements.inventory}}>
