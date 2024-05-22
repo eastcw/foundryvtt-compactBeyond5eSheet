@@ -122,16 +122,22 @@ export class CompactBeyond5eSheet extends dnd5e.applications.actor.ActorSheet5eC
 
     // apply the bonuses if they are equivalent
     if (bonuses.msak.attack === bonuses.rsak.attack) {
-      spellAttackModFormula.push(bonuses.msak.attack);
+      if (bonuses.msak.attack) {
+        spellAttackModFormula.push(bonuses.msak.attack);
+      } else {
+        spellAttackModFormula.push(0);
+      }
     } else if (!!bonuses.msak.attack && !!bonuses.rsak.attack) {
       const formulaA = new Roll(bonuses.msak.attack);
       const formulaB = new Roll(bonuses.rsak.attack);
 
       // apply the lesser deterministic bonus
       if (formulaA.isDeterministic && formulaB.isDeterministic) {
-        spellAttackModFormula.push(
-          Math.min(formulaA.evaluate({ async: false }).total, formulaB.evaluate({ async: false }.total))
+        let lesserBonus = Math.min(
+          formulaA.evaluate({ async: false }).total,
+          formulaB.evaluate({ async: false }.total)
         );
+        spellAttackModFormula.push(lesserBonus ? lesserBonus : 0);
       }
     }
 
