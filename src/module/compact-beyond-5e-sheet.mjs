@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 Andrew Krigline
+// SPDX-FileCopyrightText: 2024 Andrew Krigline & Cameron East
 //
 // SPDX-License-Identifier: MIT
 import { CompactBeyond5e } from './foundryvtt-compactBeyond5eSheet.mjs';
@@ -28,7 +28,7 @@ export class CompactBeyond5eSheet extends dnd5e.applications.actor.ActorSheet5eC
     const options = super.defaultOptions;
 
     // inject our own css class and filter options
-    mergeObject(options, {
+    foundry.utils.mergeObject(options, {
       classes: [...options.classes, 'cb5es'],
       scrollY: [...options.scrollY, '.sheet-sidebar'],
       height: 680,
@@ -122,11 +122,7 @@ export class CompactBeyond5eSheet extends dnd5e.applications.actor.ActorSheet5eC
 
     // apply the bonuses if they are equivalent
     if (bonuses.msak.attack === bonuses.rsak.attack) {
-      if (bonuses.msak.attack) {
-        spellAttackModFormula.push(bonuses.msak.attack);
-      } else {
-        spellAttackModFormula.push(0);
-      }
+      spellAttackModFormula.push(bonuses.msak.attack || 0);
     } else if (!!bonuses.msak.attack && !!bonuses.rsak.attack) {
       const formulaA = new Roll(bonuses.msak.attack);
       const formulaB = new Roll(bonuses.rsak.attack);
@@ -137,7 +133,7 @@ export class CompactBeyond5eSheet extends dnd5e.applications.actor.ActorSheet5eC
           formulaA.evaluate({ async: false }).total,
           formulaB.evaluate({ async: false }.total)
         );
-        spellAttackModFormula.push(lesserBonus ? lesserBonus : 0);
+        spellAttackModFormula.push(lesserBonus || 0);
       }
     }
 
