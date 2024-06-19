@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 Andrew Krigline
+// SPDX-FileCopyrightText: 2024 Andrew Krigline & Cameron East
 //
 // SPDX-License-Identifier: MIT
 import { CompactBeyond5eSheet } from './compact-beyond-5e-sheet.mjs';

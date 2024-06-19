@@ -17,15 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.node_version }}
 
       - name: Cache Node.js modules
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .npm
           key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -43,15 +43,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.node_version }}
 
       - name: Cache Node.js modules
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .npm
           key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -81,7 +81,7 @@ jobs:
         run: npm run build
 
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist
@@ -93,10 +93,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Download production artifacts for publication
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist
@@ -121,11 +121,11 @@ jobs:
           prerelease: ${{ github.event.release.prerelease }}
 
       # Publish this new version to the Foundry VTT Module Listing
-      - name: FoundryVTT AutoPublish
-        uses: Varriount/fvtt-autopublish@v2.0.2
-        with:
-          username: ${{ secrets.FOUNDRY_ADMIN_USER }}
-          password: ${{ secrets.FOUNDRY_ADMIN_PW }}
-          module-id: ${{ secrets.FOUNDRY_MODULE_ID }}
-          manifest-url: https://github.com/${{github.repository}}/releases/download/v${{ steps.get_version.outputs.version-without-v }}/module.json
-          manifest-file: src/module.json
+#      - name: FoundryVTT AutoPublish
+#        uses: Varriount/fvtt-autopublish@v2.0.2
+#        with:
+#          username: ${{ secrets.FOUNDRY_ADMIN_USER }}
+#          password: ${{ secrets.FOUNDRY_ADMIN_PW }}
+#          module-id: ${{ secrets.FOUNDRY_MODULE_ID }}
+#          manifest-url: https://github.com/${{github.repository}}/releases/download/v${{ steps.get_version.outputs.version-without-v }}/module.json
+#          manifest-file: src/module.json
